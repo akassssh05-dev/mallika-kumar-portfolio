@@ -80,6 +80,20 @@ function createRow(listName, fields, item = {}) {
     label.textContent = fieldLabel(field);
     label.append(input);
     fieldWrap.append(label);
+
+    if (listName === "researchPapers" && field === "fileUrl") {
+      const uploadLabel = document.createElement("label");
+      const upload = document.createElement("input");
+      upload.type = "file";
+      uploadLabel.textContent = "Upload Research Paper";
+      upload.addEventListener("change", () => {
+        uploadResearchPaper(upload.files[0], input).catch((error) => {
+          setStatus(`Upload failed: ${error.message}`, true);
+        });
+      });
+      uploadLabel.append(upload);
+      fieldWrap.append(uploadLabel);
+    }
   });
 
   const remove = document.createElement("button");
@@ -138,7 +152,7 @@ function collectProfile() {
   ["name", "eyebrow", "title", "bio"].forEach((field) => {
     updated[field] = form.elements[field].value.trim();
   });
-  ["stats", "roles", "engagements", "initiatives", "awards", "research"].forEach((listName) => {
+  ["stats", "roles", "engagements", "initiatives", "awards", "research", "researchPapers"].forEach((listName) => {
     updated[listName] = collectList(listName);
   });
   return updated;
@@ -188,6 +202,22 @@ async function uploadFile(file, folder, profileField) {
   profile[profileField] = `${siteBase}/${path}`;
   fillForm();
   setStatus(`${file.name} uploaded. Click Save to publish the new link.`);
+}
+
+async function uploadResearchPaper(file, input) {
+  if (!file) return;
+  setStatus(`Uploading ${file.name}...`);
+  const buffer = await file.arrayBuffer();
+  const bytes = new Uint8Array(buffer);
+  let binary = "";
+  bytes.forEach((byte) => {
+    binary += String.fromCharCode(byte);
+  });
+  const safeName = file.name.replace(/[^a-z0-9._-]+/gi, "-");
+  const path = `uploads/files/research-papers/${Date.now()}-${safeName}`;
+  await githubPut(path, btoa(binary), `Upload research paper ${file.name} from admin`);
+  input.value = `${siteBase}/${path}`;
+  setStatus(`${file.name} uploaded. Click Save to publish this paper.`);
 }
 
 document.getElementById("login").addEventListener("click", async () => {

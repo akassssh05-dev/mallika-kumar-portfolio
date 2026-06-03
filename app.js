@@ -30,6 +30,30 @@ function createCard(item) {
   return article;
 }
 
+function createResearchPaperItem(item) {
+  const article = document.createElement("article");
+  article.className = "paper-item";
+  const meta = document.createElement("div");
+  const year = document.createElement("span");
+  const title = document.createElement("h3");
+  const description = document.createElement("p");
+  const link = document.createElement("a");
+  meta.className = "paper-meta";
+  year.textContent = item.year || "Research";
+  title.textContent = item.title || "";
+  description.textContent = item.description || "";
+  link.className = "button secondary";
+  link.textContent = item.fileUrl ? "Open Paper" : "File Coming Soon";
+  link.href = item.fileUrl || "#papers";
+  if (item.fileUrl) {
+    link.target = "_blank";
+    link.rel = "noreferrer";
+  }
+  meta.append(year);
+  article.append(meta, title, description, link);
+  return article;
+}
+
 function createTimelineItem(item) {
   const article = document.createElement("article");
   article.className = "timeline-item";
@@ -94,6 +118,7 @@ loadContent()
     renderCollection("initiatives-list", profile.initiatives, createCard);
     renderCollection("awards-list", profile.awards, createListItem);
     renderCollection("research-list", profile.research, createCard);
+    renderCollection("research-papers-list", profile.researchPapers, createResearchPaperItem);
   })
   .catch((error) => {
     console.error(error);

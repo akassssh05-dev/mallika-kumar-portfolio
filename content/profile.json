@@ -130,5 +130,19 @@
       "title": "Internationalization of Education",
       "description": "Academic presentations and institutional collaborations focused on global education ties and cross-border learning."
     }
+  ],
+  "researchPapers": [
+    {
+      "year": "2025",
+      "title": "Cooperative Education Framework and ESG Strategies",
+      "description": "A representative research-paper entry. Upload the full paper PDF or document from the admin panel and replace this sample.",
+      "fileUrl": ""
+    },
+    {
+      "year": "2024",
+      "title": "Cooperatives and Sustainable Development Goals",
+      "description": "Add a visitor-readable paper, article, or conference document connected with SDGs and cooperative education.",
+      "fileUrl": ""
+    }
   ]
 }

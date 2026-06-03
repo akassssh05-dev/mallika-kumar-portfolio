@@ -1,11 +1,11 @@
 :root {
   --ink: #17202a;
-  --muted: #64737d;
-  --paper: #f6f3ed;
+  --muted: #5c728a;
+  --paper: #f4fbff;
   --surface: #ffffff;
-  --line: #d9dfdf;
-  --teal: #006b68;
-  --coral: #b84c3e;
+  --line: #d7eaf7;
+  --teal: #38aeea;
+  --coral: #087bb6;
   --danger: #9f2f24;
 }
 
@@ -32,7 +32,7 @@ body {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--surface);
-  box-shadow: 0 20px 50px rgba(23, 32, 42, 0.1);
+  box-shadow: 0 20px 50px rgba(28, 119, 170, 0.12);
 }
 
 .login-panel {
@@ -149,7 +149,7 @@ button.ghost {
   padding: 14px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: #fbfaf7;
+  background: #f4fbff;
 }
 
 .row-fields {
