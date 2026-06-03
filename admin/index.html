@@ -4,9 +4,68 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Portfolio Admin</title>
+    <link rel="stylesheet" href="admin.css" />
   </head>
   <body>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script src="https://unpkg.com/decap-cms@^3.6.0/dist/decap-cms.js"></script>
+    <main class="admin-shell">
+      <section class="panel login-panel" id="login-panel">
+        <p class="eyebrow">Admin Login</p>
+        <h1>Update the portfolio from GitHub Pages.</h1>
+        <p>
+          Sign in with a GitHub fine-grained token that has read/write access to this repository's contents. The token is
+          stored only in this browser.
+        </p>
+        <label>
+          GitHub Token
+          <input id="token" type="password" autocomplete="off" placeholder="github_pat_..." />
+        </label>
+        <button id="login" type="button">Login</button>
+        <p class="help">
+          Create a fine-grained token for <strong>akassssh05-dev/mallika-kumar-portfolio</strong> with
+          <strong>Contents: Read and write</strong>.
+        </p>
+      </section>
+
+      <section class="panel editor-panel hidden" id="editor-panel">
+        <div class="editor-header">
+          <div>
+            <p class="eyebrow">Portfolio Content</p>
+            <h1>Edit Profile</h1>
+          </div>
+          <button class="ghost" id="logout" type="button">Logout</button>
+        </div>
+
+        <div id="status" class="status" role="status"></div>
+
+        <form id="profile-form">
+          <div class="grid two">
+            <label>Name<input name="name" required /></label>
+            <label>Eyebrow<input name="eyebrow" /></label>
+          </div>
+          <label>Title<textarea name="title" rows="3"></textarea></label>
+          <label>Bio<textarea name="bio" rows="7"></textarea></label>
+
+          <div class="uploads">
+            <label>Upload Profile Image<input id="image-upload" type="file" accept="image/*" /></label>
+            <label>Upload Resume/File<input id="file-upload" type="file" /></label>
+          </div>
+
+          <section class="repeaters">
+            <div data-list="stats" data-fields="value,label"></div>
+            <div data-list="roles" data-fields="title,description"></div>
+            <div data-list="engagements" data-fields="year,title,description"></div>
+            <div data-list="initiatives" data-fields="title,description"></div>
+            <div data-list="awards" data-fields="title,description"></div>
+            <div data-list="research" data-fields="title,description"></div>
+          </section>
+
+          <div class="actions">
+            <button id="save" type="submit">Save to GitHub</button>
+            <a class="site-link" href="../">View Site</a>
+          </div>
+        </form>
+      </section>
+    </main>
+    <script src="admin.js"></script>
   </body>
 </html>

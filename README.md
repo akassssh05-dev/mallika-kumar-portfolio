@@ -10,16 +10,18 @@ This is a public portfolio website with an admin dashboard at `/admin`.
 - Decap CMS configuration: `admin/config.yml`
 - Upload folders for images and files: `uploads/images` and `uploads/files`
 
-## Publish with GitHub storage
+## Admin login on GitHub Pages
 
-1. Create a GitHub repository and upload this folder.
-2. Deploy it on Netlify.
-3. In Netlify, enable Identity.
-4. In Netlify, enable Git Gateway.
-5. Invite the admin email under Identity.
-6. Visit `/admin`, log in, and edit the profile.
+The admin page is available at `/admin` and commits edits directly to GitHub.
 
-Decap CMS will commit profile edits, image uploads, and file uploads to the GitHub repository.
+To log in:
+
+1. Create a GitHub fine-grained personal access token.
+2. Limit it to this repository: `akassssh05-dev/mallika-kumar-portfolio`.
+3. Give it repository permission: `Contents: Read and write`.
+4. Open `/admin` and paste the token.
+
+Use this only from a trusted browser. The token is stored in that browser's local storage so the admin page can save edits and upload files to GitHub.
 
 ## Local editing
 
