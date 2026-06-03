@@ -5,7 +5,7 @@ backend:
 local_backend: true
 
 media_folder: "uploads/images"
-public_folder: "/uploads/images"
+public_folder: "/mallika-kumar-portfolio/uploads/images"
 
 collections:
   - name: "settings"
@@ -20,7 +20,7 @@ collections:
           - { label: "Eyebrow", name: "eyebrow", widget: "string" }
           - { label: "Title", name: "title", widget: "text" }
           - { label: "Profile Image", name: "profileImage", widget: "image", required: false }
-          - { label: "Resume File", name: "resumeFile", widget: "file", required: false, media_folder: "uploads/files", public_folder: "/uploads/files" }
+          - { label: "Resume File", name: "resumeFile", widget: "file", required: false, media_folder: "uploads/files", public_folder: "/mallika-kumar-portfolio/uploads/files" }
           - { label: "Bio", name: "bio", widget: "text" }
           - label: "Stats"
             name: "stats"
