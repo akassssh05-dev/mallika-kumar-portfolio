@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1400" role="img" aria-label="Abstract global academic cooperation network">
+  <defs>
+    <linearGradient id="sky" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#dcebe5"/>
+      <stop offset="0.46" stop-color="#f7f0df"/>
+      <stop offset="1" stop-color="#d8e1ea"/>
+    </linearGradient>
+    <radialGradient id="globe" cx="48%" cy="42%" r="60%">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.55" stop-color="#c9ddd8"/>
+      <stop offset="1" stop-color="#006b68"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="1400" fill="url(#sky)"/>
+  <circle cx="610" cy="560" r="390" fill="url(#globe)" opacity="0.92"/>
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="3">
+    <ellipse cx="610" cy="560" rx="390" ry="120"/>
+    <ellipse cx="610" cy="560" rx="390" ry="250"/>
+    <ellipse cx="610" cy="560" rx="140" ry="390"/>
+    <ellipse cx="610" cy="560" rx="270" ry="390"/>
+    <path d="M220 560h780M610 170v780"/>
+  </g>
+  <g fill="#b84c3e">
+    <circle cx="350" cy="420" r="14"/>
+    <circle cx="510" cy="320" r="12"/>
+    <circle cx="720" cy="390" r="16"/>
+    <circle cx="830" cy="610" r="13"/>
+    <circle cx="560" cy="720" r="15"/>
+    <circle cx="420" cy="630" r="11"/>
+  </g>
+  <g fill="none" stroke="#b84c3e" stroke-width="5" stroke-linecap="round" opacity="0.7">
+    <path d="M350 420C470 325 590 315 720 390"/>
+    <path d="M720 390C820 455 870 520 830 610"/>
+    <path d="M830 610C730 710 650 750 560 720"/>
+    <path d="M560 720C490 700 450 670 420 630"/>
+    <path d="M420 630C375 560 345 490 350 420"/>
+  </g>
+  <path d="M0 1130c170-80 340-107 510-80s310 90 455 74c95-10 172-46 235-88v364H0z" fill="#17202a"/>
+  <path d="M0 1190c164-52 314-61 450-28 166 40 306 92 465 61 112-22 204-78 285-141v318H0z" fill="#006b68"/>
+  <g fill="#fbfaf7" opacity="0.92">
+    <rect x="160" y="1020" width="300" height="18" rx="9"/>
+    <rect x="160" y="1060" width="410" height="18" rx="9"/>
+    <rect x="160" y="1100" width="250" height="18" rx="9"/>
+  </g>
+</svg>

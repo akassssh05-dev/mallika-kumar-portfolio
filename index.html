@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Prof. Dr. Mallika Kumar | Portfolio</title>
+    <meta
+      name="description"
+      content="Academic portfolio of Prof. Dr. Mallika Kumar, Professor of Economics, cooperative education advocate, international programmes founder coordinator, and SDG practitioner."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" data-field="name">Prof. Dr. Mallika Kumar</a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#profile">Profile</a>
+        <a href="#impact">Impact</a>
+        <a href="#engagements">Engagements</a>
+        <a href="#awards">Awards</a>
+        <a href="#admin">Admin</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-media">
+          <img id="hero-photo" src="assets/global-cooperative-network.svg" alt="" />
+        </div>
+        <div class="hero-content">
+          <p class="eyebrow" data-field="eyebrow">Economics | Cooperatives | SDGs | International Education</p>
+          <h1 id="hero-title" data-field="name">Prof. Dr. Mallika Kumar</h1>
+          <p class="hero-subtitle" data-field="title">
+            Professor of Economics and Founder Coordinator, Office of International Programmes, Shri Ram College of
+            Commerce, University of Delhi.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#profile">View Profile</a>
+            <a class="button secondary" id="resume-link" href="#" target="_blank" rel="noreferrer">Download Resume</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section intro" id="profile">
+        <div class="section-label">Profile</div>
+        <div>
+          <h2>Connecting the local to the global through education, cooperatives, and public purpose.</h2>
+          <p id="bio"></p>
+        </div>
+      </section>
+
+      <section class="stats-band" id="impact" aria-label="Impact highlights"></section>
+
+      <section class="section two-column">
+        <div>
+          <div class="section-label">Current Roles</div>
+          <h2>Academic, policy, and institutional leadership.</h2>
+        </div>
+        <div class="list-grid" id="roles-list"></div>
+      </section>
+
+      <section class="section timeline-section" id="engagements">
+        <div>
+          <div class="section-label">Global Engagements</div>
+          <h2>Selected international lectures, conferences, and collaborations.</h2>
+        </div>
+        <div class="timeline" id="engagements-list"></div>
+      </section>
+
+      <section class="section highlight-section">
+        <div>
+          <div class="section-label">Initiatives</div>
+          <h2>Programmes and platforms built across institutions.</h2>
+        </div>
+        <div class="cards" id="initiatives-list"></div>
+      </section>
+
+      <section class="section two-column" id="awards">
+        <div>
+          <div class="section-label">Awards</div>
+          <h2>Recognition for higher education and cooperative education work.</h2>
+        </div>
+        <div class="list-grid" id="awards-list"></div>
+      </section>
+
+      <section class="section publications-section">
+        <div>
+          <div class="section-label">Research</div>
+          <h2>Selected research and knowledge contributions.</h2>
+        </div>
+        <div class="cards compact" id="research-list"></div>
+      </section>
+
+      <section class="admin-panel" id="admin">
+        <div>
+          <p class="section-label">Admin</p>
+          <h2>Edit portfolio content, upload images, and store changes in GitHub.</h2>
+          <p>
+            The admin dashboard is configured with Decap CMS. After GitHub authentication is connected, edits to the
+            profile JSON and uploaded media are committed directly to the repository.
+          </p>
+        </div>
+        <a class="button primary" href="admin/">Open Admin Login</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> <span data-field="name">Prof. Dr. Mallika Kumar</span></p>
+      <a href="admin/">Admin</a>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

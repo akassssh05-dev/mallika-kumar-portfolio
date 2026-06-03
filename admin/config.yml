@@ -1,0 +1,61 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: "uploads/images"
+public_folder: "/uploads/images"
+
+collections:
+  - name: "settings"
+    label: "Portfolio Content"
+    files:
+      - file: "content/profile.json"
+        name: "profile"
+        label: "Profile"
+        format: "json"
+        fields:
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Title", name: "title", widget: "text" }
+          - { label: "Profile Image", name: "profileImage", widget: "image", required: false }
+          - { label: "Resume File", name: "resumeFile", widget: "file", required: false, media_folder: "uploads/files", public_folder: "/uploads/files" }
+          - { label: "Bio", name: "bio", widget: "text" }
+          - label: "Stats"
+            name: "stats"
+            widget: "list"
+            fields:
+              - { label: "Value", name: "value", widget: "string" }
+              - { label: "Label", name: "label", widget: "string" }
+          - label: "Roles"
+            name: "roles"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - label: "Engagements"
+            name: "engagements"
+            widget: "list"
+            fields:
+              - { label: "Year", name: "year", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - label: "Initiatives"
+            name: "initiatives"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - label: "Awards"
+            name: "awards"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - label: "Research"
+            name: "research"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
