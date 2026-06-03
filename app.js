@@ -54,6 +54,23 @@ function createResearchPaperItem(item) {
   return article;
 }
 
+function createGalleryItem(item) {
+  const article = document.createElement("article");
+  article.className = "gallery-item";
+  const image = document.createElement("img");
+  const body = document.createElement("div");
+  const title = document.createElement("h3");
+  const description = document.createElement("p");
+  image.src = item.imageUrl || "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=85";
+  image.alt = item.title || "Gallery image";
+  body.className = "gallery-body";
+  title.textContent = item.title || "";
+  description.textContent = item.description || "";
+  body.append(title, description);
+  article.append(image, body);
+  return article;
+}
+
 function createTimelineItem(item) {
   const article = document.createElement("article");
   article.className = "timeline-item";
@@ -119,6 +136,7 @@ loadContent()
     renderCollection("awards-list", profile.awards, createListItem);
     renderCollection("research-list", profile.research, createCard);
     renderCollection("research-papers-list", profile.researchPapers, createResearchPaperItem);
+    renderCollection("gallery-list", profile.gallery, createGalleryItem);
   })
   .catch((error) => {
     console.error(error);

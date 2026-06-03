@@ -94,6 +94,21 @@ function createRow(listName, fields, item = {}) {
       uploadLabel.append(upload);
       fieldWrap.append(uploadLabel);
     }
+
+    if (listName === "gallery" && field === "imageUrl") {
+      const uploadLabel = document.createElement("label");
+      const upload = document.createElement("input");
+      upload.type = "file";
+      upload.accept = "image/*";
+      uploadLabel.textContent = "Upload Gallery Image";
+      upload.addEventListener("change", () => {
+        uploadGalleryImage(upload.files[0], input).catch((error) => {
+          setStatus(`Upload failed: ${error.message}`, true);
+        });
+      });
+      uploadLabel.append(upload);
+      fieldWrap.append(uploadLabel);
+    }
   });
 
   const remove = document.createElement("button");
@@ -152,7 +167,7 @@ function collectProfile() {
   ["name", "eyebrow", "title", "bio"].forEach((field) => {
     updated[field] = form.elements[field].value.trim();
   });
-  ["stats", "roles", "engagements", "initiatives", "awards", "research", "researchPapers"].forEach((listName) => {
+  ["stats", "roles", "engagements", "initiatives", "awards", "research", "researchPapers", "gallery"].forEach((listName) => {
     updated[listName] = collectList(listName);
   });
   return updated;
@@ -218,6 +233,22 @@ async function uploadResearchPaper(file, input) {
   await githubPut(path, btoa(binary), `Upload research paper ${file.name} from admin`);
   input.value = `${siteBase}/${path}`;
   setStatus(`${file.name} uploaded. Click Save to publish this paper.`);
+}
+
+async function uploadGalleryImage(file, input) {
+  if (!file) return;
+  setStatus(`Uploading ${file.name}...`);
+  const buffer = await file.arrayBuffer();
+  const bytes = new Uint8Array(buffer);
+  let binary = "";
+  bytes.forEach((byte) => {
+    binary += String.fromCharCode(byte);
+  });
+  const safeName = file.name.replace(/[^a-z0-9._-]+/gi, "-");
+  const path = `uploads/images/gallery/${Date.now()}-${safeName}`;
+  await githubPut(path, btoa(binary), `Upload gallery image ${file.name} from admin`);
+  input.value = `${siteBase}/${path}`;
+  setStatus(`${file.name} uploaded. Click Save to publish this gallery item.`);
 }
 
 document.getElementById("login").addEventListener("click", async () => {
